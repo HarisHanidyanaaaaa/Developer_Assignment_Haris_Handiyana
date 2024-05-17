@@ -37,20 +37,7 @@
   </head>
 
 <body>
-      @if (session('success'))
-                   <div class="alert alert-success" role="alert">
-                    <span>{{ session('success') }}</span>
-                   </div>
-                      
-                     
-                   @endif
-                   @if (session('error'))
-                   <div class="alert alert-danger" role="alert">
-                    <span>{{ session('error') }}</span>
-                   </div>
-                      
-                     
-                   @endif
+
 
      <div
             class="modal fade"
@@ -78,6 +65,9 @@
                                 <div class="form-group mb-3">
 
                                     <input type="email" class="form-control" id="inputData" placeholder="Emal Anda" name="email">
+                                     @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
                                 </div>
                                 <div class="form-group mb-3">
 
@@ -103,9 +93,21 @@
         <div class="container">
     <div class="col-md-4 w-50">
         <div class="card mb-3">
+            
             <div class="card-body">
                 <h3 class="card-title">Silahkan Login Terlebih Dahulu</h3>
             </div>
+             @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            <span>{{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger" role="alert">
+            <span>{{ session('error') }}</span>
+        </div>
+    @endif
             <form action="{{ route('check') }}" method="POST" role="form">
                 @csrf
                 <div class="modal-body">
@@ -120,9 +122,20 @@
                         <label for="">Password Anda</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                     </div>
+                    <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="validationCheckbox" onchange="toggleLoginButton()">
+                            <label class="form-check-label" for="validationCheckbox">
+                                Pastikan Email dan Password sudah terisi !
+                            </label>
+                        </div>
                 </div>
+                 @if ($errors->has('email') || $errors->has('password'))
+                            <div class="alert alert-danger" role="alert">
+                                <span>Tolong isi email dan password terlebih dahulu</span>
+                            </div>
+                        @endif
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Login</button>
+                    <button type="submit" class="btn btn-success" id="loginButton" style="display: none;">Login</button>
                     Belum punya Akun ? <a href=""  type="button"   data-bs-toggle="modal" data-bs-target="#modalId">Register Disini</a>
                 </div>
             </form>
@@ -148,7 +161,19 @@
                 // Use above variables to manipulate the DOM
             });
         </script>
-        
+            <script>
+        // Function to toggle login button based on checkbox status
+        function toggleLoginButton() {
+            var checkbox = document.getElementById('validationCheckbox');
+            var loginButton = document.getElementById('loginButton');
+
+            if (checkbox.checked) {
+                loginButton.style.display = 'block'; // Munculkan tombol login jika checkbox dicentang
+            } else {
+                loginButton.style.display = 'none'; // Sembunyikan tombol login jika checkbox tidak dicentang
+            }
+        }
+    </script>
    <script src="{{ url('') }}/temp/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->

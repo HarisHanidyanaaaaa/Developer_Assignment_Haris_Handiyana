@@ -23,10 +23,8 @@ Route::post('/check', [AuthController::class, 'check'])->name('check');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/login/authenticate', [AuthController::class, 'authenticate'])->name('login.authenticate');
 Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/User-Register', [AuthController::class, 'register'])->name('User-Register');
 
-
-
-Route::post('/User-Register', [UserController::class, 'register'])->name('User-Register');
 Route::middleware('auth')->group(
     function () {
         Route::get('/User-Index', [UserController::class, 'index'])->name('User-Index');

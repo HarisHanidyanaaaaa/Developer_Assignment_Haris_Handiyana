@@ -56,7 +56,7 @@
                 <div class="card">
                   <div class="card-body">
                     
-                    <div class="table-responsive">
+                    <div class="table-responsive" style="height:550px; overflow-y: scroll;">
                        <table class="table">
         <thead>
             <tr>

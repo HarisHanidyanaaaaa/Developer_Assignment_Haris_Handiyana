@@ -15,7 +15,12 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
+        
         $input = $request->all();
+        $existingUser = User::where('email', $input['email'])->first();
+        if ($existingUser) {
+            return redirect('/User-Index')->with('error', 'Email sudah terdaftar');
+        }
         User::create([
             'name' => $input['name'],
             'email' => $input['email'],
@@ -26,18 +31,7 @@ class UserController extends Controller
 
         return redirect('/User-Index')->with('success', 'Data berhasil ditambahkan');
     }
-    public function register(Request $request)
-    {
-        $input = $request->all();
-        User::create([
-            'name' => $input['name'],
-            'email' => $input['email'],
-            'role' => $input['role'],
-            'password' => Hash::make($request['password']),
-        ]);
-
-        return redirect('/login');
-    }
+   
 
     public function update(Request $request, $id)
     {
@@ -55,9 +49,9 @@ class UserController extends Controller
             $input['password'] = Hash::make($input['password']);
             User::find($request->id)->update($input);
           
-            return redirect('/User-Index')->with('success', 'Data berhasil diubah');
+            return redirect('/User-Index')->with('success', 'Password Berhasil Di Update');
         } catch (\Throwable $th) {
-            return redirect('/User-Index')->with('error', 'Data gagal diubah');
+            return redirect('/User-Index')->with('error', 'Password Gagal Di Update');
         }
     }
 

@@ -24,6 +24,7 @@
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="{{ route('Master-Obat-Index') }}">Data Obat</a></li>
                   <li class="nav-item"> <a class="nav-link" href="{{ route('Master-Signa-Index') }}">Data Signa</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{{ route('User-Index') }}">Data User</a></li>
                 </ul>
               </div>
             </li>

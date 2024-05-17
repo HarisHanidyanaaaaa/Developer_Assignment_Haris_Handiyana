@@ -53,6 +53,21 @@ class AuthController extends Controller
             $user
         );
     }
-   
+    public function register(Request $request)
+    {
+        $input = $request->all();
+        $existingUser = User::where('email', $input['email'])->first();
+        if ($existingUser) {
+            return redirect('/')->with('error', 'Email sudah terdaftar');
+        }
+        User::create([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'role' => $input['role'],
+            'password' => Hash::make($request['password']),
+        ]);
+
+        return redirect('/')->with('success', 'Anda Berhasil Registrasi');
+    }
    
 }
