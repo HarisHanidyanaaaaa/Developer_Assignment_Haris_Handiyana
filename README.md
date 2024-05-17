@@ -49,3 +49,13 @@ DB_PASSWORD=
 
     Open your browser and go to localhost:8000 or other laravel ports and now you ready to build your apps!
 
+**feature :
+I use security with 1 application in 1 web browser
+
+I use the Hashing function to disguise the password
+
+I use modal forms for efficiency
+
+I use the security feature of 1 email with 1 user
+
+so there is no data redundancy

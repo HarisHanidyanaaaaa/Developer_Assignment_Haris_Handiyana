@@ -11,18 +11,15 @@
     <link rel="stylesheet" href="{{ url('') }}/temp/assets/vendors/css/vendor.bundle.base.css">
          <style>
         
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; 
-            background-color: #f8f9fa; 
-        }
-       
+        
         .container {
-            max-width: 500px; 
+            max-width: 500px;
+         
         }
-       
+       .kotak{
+           border: 2px solid #ccc;
+           border-radius: 20px;
+       }
         .card {
             border: 1px solid #ddd; 
             border-radius: 50px; 
@@ -90,8 +87,8 @@
                     </div>
                 </form>
         </div>
-        <div class="container">
-    <div class="col-md-4 w-50">
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="kotak w-50">
         <div class="card mb-3">
             
             <div class="card-body">
@@ -125,7 +122,7 @@
                     <div class="form-check mb-3">
                             <input class="form-check-input" type="checkbox" id="validationCheckbox" onchange="toggleLoginButton()">
                             <label class="form-check-label" for="validationCheckbox">
-                                Pastikan Email dan Password sudah terisi !
+                               <b> Pastikan Email dan Password sudah terisi !</b>
                             </label>
                         </div>
                 </div>
