@@ -59,3 +59,21 @@ I use modal forms for efficiency
 I use the security feature of 1 email with 1 user
 
 so there is no data redundancy
+
+- authentication user, terdiri dari login, register, ubah password. 
+- setelah simpan resep dilakukan, user dapat melakukan cetak resep dan cetakan dapat diberikan kepada 
+pembeli obat (PDF)
+
+
+## email and password for trail /trying this application
+email : haris@gmail.com
+password : haris
+
+email : ad@a.com
+password : admin
+
+email : test@gmail.com
+password : test
+
+email : sipatex@gmail.com
+password : sipatex

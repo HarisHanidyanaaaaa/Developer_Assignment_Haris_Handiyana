@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 17, 2024 at 04:07 AM
+-- Generation Time: May 17, 2024 at 05:34 AM
 -- Server version: 10.11.4-MariaDB
 -- PHP Version: 8.0.29
 
@@ -3723,10 +3723,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'test', 'test@gmail.com', NULL, '$2y$10$JPD9zlpCjD4/5szh4mTBN.WxzNLqykOGj/t1uxcnfTcQPMpoBvVp6', 'user', NULL, '2024-05-14 23:54:50', '2024-05-16 19:30:19'),
-(3, 'Haris Handiyana', 'haris@gmail.com', NULL, '$2y$10$7l.ZGSBzbcOPXHhYkt701.vCfWRV225zRVy1pEGLkTDZs8aWip7MC', 'user', NULL, '2024-05-15 01:05:22', '2024-05-16 19:30:30'),
-(6, 'sipatex', 'sipatex@gmail.com', NULL, '$2y$10$IpRnuSiMQYNXipZYUzxrruASs0I3fcpWLm9KHv1uzpgwFYhRVB/U.', 'user', NULL, '2024-05-16 19:30:51', '2024-05-16 19:30:59'),
-(7, 'admin', 'ad@a.com', NULL, '$2y$10$lBJdgXJSLns5474goU/4QOuD27UsdoZT339z/ROAMDAi87GApddDO', 'user', NULL, '2024-05-16 20:27:15', '2024-05-16 20:27:15');
+(2, 'test', 'test@gmail.com', NULL, '$2y$10$oXMnQJv90//g0.G7RmmhT.jnI7LAyuqVN3rJoKadgU.6R8jbbhFbW', 'user', NULL, '2024-05-14 23:54:50', '2024-05-16 22:33:38'),
+(3, 'Haris Handiyana', 'haris@gmail.com', NULL, '$2y$10$y3qNSEv0OHdQLia7Px5XZeRDRw63/sJ1Yvz9flmy4e6Nq9V41I2ia', 'user', NULL, '2024-05-15 01:05:22', '2024-05-16 22:33:49'),
+(6, 'sipatex', 'sipatex@gmail.com', NULL, '$2y$10$qOsZgyhBls06uz/qHEpzPu9CSTz02SJF39mOQEFe1VqJjr8J/Uh3m', 'user', NULL, '2024-05-16 19:30:51', '2024-05-16 22:33:59'),
+(7, 'admin', 'ad@a.com', NULL, '$2y$10$RhEEjkd2NHlXMG.sFhKvSOa/zi6CI4hlzfwTtc8PrDywNENA6tBZa', 'user', NULL, '2024-05-16 20:27:15', '2024-05-16 22:34:07');
 
 --
 -- Indexes for dumped tables
