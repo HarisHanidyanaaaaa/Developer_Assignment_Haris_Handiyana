@@ -25,6 +25,8 @@ This might take awhile but I'm pretty sure this is worth it. So let's get starte
     npm install npm run build
 
 
+## copy .env.example rename to .env
+
 *Configure your database in .env
 
 DB_CONNECTION=mysql
