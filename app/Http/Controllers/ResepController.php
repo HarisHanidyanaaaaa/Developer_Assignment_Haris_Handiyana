@@ -55,24 +55,7 @@ class ResepController extends Controller
 
         return redirect('/Resep-Index')->with('success', 'Resep racikan berhasil disimpan dan stok berhasil dikurangi.');
     }
-    public function update(Request $request, $id)
-    {
-        $resep = ResepModels::find($id);
-        $resep->obatalkes_nama = $request->obatalkes_nama;
-        $resep->signa_nama = $request->signa_nama;
-        $resep->qty = $request->qty;
-        $resep->save();
-        return redirect('/Akta-Index');
-    }
-
-    public function destroy($id)
-    {
-
-        $r = ResepModels::findOrFail($id);
-        $r->delete();
-
-        return redirect()->back()->with('success', 'Data berhasil dihapus');
-    }
+   
     public function printrow($id)
     {
         $resep = ResepModels::where('resep_id', $id)->get();
